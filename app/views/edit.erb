@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>New Article</title>
+  </head>
+  <body>
+    <form action="/articles/<%= @article.id %>" method="post">
+      <p>
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="article[title]" value="<%= @article.title %>">
+      </p>
+      <p>
+        <label for="content">Content:</label>
+        <textarea name="article[content]" id="content" rows="8" cols="80"><%= @article.content %></textarea>
+      </p>
+      <p>
+        <input id="hidden" type="hidden" name="_method" value="PATCH">
+        <input type="submit" name="submit" id="submit" value="Submit">
+      </p>
+    </form>
+  </body>
+</html>
